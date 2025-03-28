@@ -1,0 +1,128 @@
+Movie Search App - Technical Notes
+
+Project Overview
+
+    React Native + Expo mobile app
+
+    Uses OMDb API (https://www.omdbapi.com/)
+
+    Features:
+
+        Movie search functionality
+
+        Detailed movie view
+
+        Favorite movies storage (AsyncStorage)
+
+        Paginated results
+
+Tech Stack
+
+Frontend: React Native, Expo
+Navigation: @react-navigation/native
+HTTP Client: axios
+State Management: React Context (optional)
+Storage: @react-native-async-storage/async-storage
+Icons: @expo/vector-icons
+
+Setup Instructions
+
+    Prerequisites
+
+        Node.js (v16+)
+
+        Expo CLI (npm install -g expo-cli)
+
+        Git
+
+    Clone & Install
+
+        git clone https://github.com/your-username/MovieSearchApp.git
+        cd MovieSearchApp
+        npm install
+
+    Environment Setup
+
+        Create .env file:
+
+            EXPO_PUBLIC_OMDB_API_KEY=your_omdb_key_here
+
+        Get API key: http://www.omdbapi.com/apikey.aspx
+
+    Run Development Server
+
+    npx expo start
+
+        Press a for Android emulator
+
+        Press i for iOS simulator (macOS only)
+
+        Scan QR code with Expo Go app (physical devices)
+
+Project Structure
+Copy
+
+/src
+  /components      # Reusable UI components
+  /screens         # App screens
+  /utils           # API and storage utilities
+/app.json          # Expo configuration
+babel.config.js    # Babel config
+
+Key Files
+
+    src/screens/HomeScreen.js - Main search interface
+
+    src/screens/MovieDetailScreen.js - Detailed movie view
+
+    src/utils/api.js - OMDb API service
+
+    src/utils/storage.js - Favorite movies storage
+
+Build Commands
+Command	Description
+expo start	Start dev server
+expo start -c	Clear cache and start
+expo run:android	Build Android APK
+expo run:ios	Build iOS app (macOS only)
+Troubleshooting
+
+    API Errors
+
+        Verify API key in .env
+
+        Check network connectivity
+
+        Monitor API limits (1000 requests/day for free tier)
+
+    Mobile Issues
+
+    npx expo start -c  # Clear cache
+    rm -rf node_modules && npm install  # Reinstall dependencies
+
+    Web Version Not Working
+
+        Ensure EXPO_PUBLIC_ prefix is used for web env vars
+
+        Check browser console for CORS errors
+
+Maintenance
+
+    To update dependencies:
+
+        npm outdated
+        npm update
+
+    To add new screens:
+
+        Create screen in /src/screens
+
+        Add route in App.js or app/_layout.js
+
+Note: For team collaboration, ensure all members:
+
+    Use the same Node.js version
+
+    Configure identical environment variables
+
+    Sync package versions using package-lock.json
