@@ -67,6 +67,7 @@ Open your browser and visit http://localhost:8081
 
 ### Build for Production 🚀
 
+*Note: Make sure you have installed Android SDK and setup the paths correctly before running the command below!*
 ### Android APK
 ```bash
 npx expo run:android
@@ -78,7 +79,7 @@ npx expo run:ios
 
 ### Web Export
 ```bash
-npx expo export:web
+npx expo export
 ```
 
 Serve the web-build/ folder using any static server.
